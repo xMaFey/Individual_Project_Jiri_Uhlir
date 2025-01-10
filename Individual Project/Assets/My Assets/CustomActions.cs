@@ -57,7 +57,7 @@ public partial class @CustomActions: IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
-    }
+       }
 
     ~@CustomActions()
     {

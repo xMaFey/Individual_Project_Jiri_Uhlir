@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     const string IDLE = "Idle";
     const string WALK = "Walk";
 
+    public Inventory inventory;
+
     CustomActions input;
 
     NavMeshAgent agent;
@@ -68,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     void FaceTarget()
     {
-        if(agent.remainingDistance > animationThreshold)
+        if (agent.remainingDistance > animationThreshold)
         {
             Vector3 direction = (agent.destination - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     void SetAnimations()
     {
-        if(agent.velocity.magnitude <= animationThreshold)
+        if (agent.velocity.magnitude <= animationThreshold)
         {
             animator.SetBool("IsWalking", false);
             Debug.Log("Idle");
@@ -87,6 +89,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsWalking", true);
             Debug.Log("Walking");
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
         }
     }
 }
