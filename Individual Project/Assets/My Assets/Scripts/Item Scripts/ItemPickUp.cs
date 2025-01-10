@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickUp : MonoBehaviour
+public class Tomato : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string _prompt;
 
-    // Update is called once per frame
-    void Update()
+    public string InteractionPrompt => _prompt;
+    public InventoryItemData ItemData;
+
+    public bool Interact(Interactor interactor)
     {
-        
+        var inventory = interactor.GetComponent<InventoryHolder>();
+
+        if (inventory == null)
+        {
+            return false;
+        }
+
+        if (inventory.InventorySystem.AddToInventory(ItemData, 1))
+        {
+
+            Debug.Log("Picking up Item!");
+            Destroy(this.gameObject);
+        }
+
+        return true;
     }
 }
