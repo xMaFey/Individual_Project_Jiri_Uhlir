@@ -10,10 +10,10 @@ public class PlayerUI : MonoBehaviour
     //Use this for initialization
     void Start()
     {
-        Inventory.ItemAdded += InventoryScript_ItemAdded;
+        //Inventory.ItemAdded += InventoryScript_ItemAdded;
     }
 
-    private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
+    private void InventoryScript_ItemAdded(object sender)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
         foreach (Transform slot in inventoryPanel)
@@ -25,7 +25,7 @@ public class PlayerUI : MonoBehaviour
             if (!image.enabled)
             {
                 image.enabled = true;
-                image.sprite = e.Item.Image;
+                //image.sprite = e.Item.Image;
 
                 break;
             }

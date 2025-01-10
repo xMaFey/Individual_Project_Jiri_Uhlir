@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     float lookRotationSpeed = 8f;
     float animationThreshold = 0.1f;
 
+    //private IInventoryItem currentItem;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -83,21 +85,12 @@ public class PlayerController : MonoBehaviour
         if (agent.velocity.magnitude <= animationThreshold)
         {
             animator.SetBool("IsWalking", false);
-            Debug.Log("Idle");
+            //Debug.Log("Idle");
         }
         else
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("Walking");
-        }
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            inventory.AddItem(item);
+            //Debug.Log("Walking");
         }
     }
 }
