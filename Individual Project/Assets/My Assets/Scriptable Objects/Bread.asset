@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aff4289037751642b1d10e347eaf392, type: 3}
-  m_Name: Potato
+  m_Name: Bread
   m_EditorClassIdentifier: 
   ID: 0
-  DisplayName: Potato
-  Description: This is Potato
-  Icon: {fileID: 0}
-  MaxStackSize: 1
+  DisplayName: Bread
+  Description: This is a Bread.
+  Icon: {fileID: 21300000, guid: 9a82544a4e8ea82448062dac5853f931, type: 3}
+  MaxStackSize: 5
