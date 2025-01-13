@@ -10,3 +10,10 @@ public class ShopItemList : ScriptableObject
     [SerializeField] private float _sellMarkUp;
     [SerializeField] private float _buyMarkDown;
 }
+
+[System.Serializable]
+public struct ShopInventoryItem
+{
+    public InventoryItemData ItemData;
+    public int Amount;
+}

@@ -3026,6 +3026,7 @@ GameObject:
   - component: {fileID: 719564845}
   - component: {fileID: 719564844}
   - component: {fileID: 719564843}
+  - component: {fileID: 719564847}
   m_Layer: 7
   m_Name: Chest (1)
   m_TagString: Untagged
@@ -3135,6 +3136,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719564841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &719564847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719564841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692988a8dc85da24484fa35fb4a8074c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 021306b7-9ee9-4644-b200-a6476e003a9c
 --- !u!1 &787190540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3531,7 @@ GameObject:
   - component: {fileID: 854149830}
   - component: {fileID: 854149829}
   - component: {fileID: 854149832}
+  - component: {fileID: 854149833}
   m_Layer: 7
   m_Name: Chest
   m_TagString: Untagged
@@ -3626,6 +3641,19 @@ MonoBehaviour:
   primaryInventorySystem:
     inventorySlots: []
   _prompt: E - Small Chest
+--- !u!114 &854149833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854149827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692988a8dc85da24484fa35fb4a8074c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 40f80ba6-d1a1-419c-945e-c722a5da09b1
 --- !u!1 &872421860
 GameObject:
   m_ObjectHideFlags: 0
@@ -7426,7 +7454,7 @@ MonoBehaviour:
   ItemSprite: {fileID: 1687323166}
   ItemCount: {fileID: 534165228}
   AssignedInventorySlot:
-    itemData: {fileID: 0}
+    _itemID: -1
     stackSize: -1
 --- !u!224 &2042208720
 RectTransform:
