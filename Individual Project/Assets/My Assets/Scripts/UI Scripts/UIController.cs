@@ -25,5 +25,6 @@ public class UIController : MonoBehaviour
     private void DisplayShowWindow(ShopSystem shopSystem, PlayerInventoryHolder playerInventory)
     {
         _shopKeeperDisplay.gameObject.SetActive(true);
+        _shopKeeperDisplay.DisplayShopWindow(shopSystem, playerInventory);
     }
 }

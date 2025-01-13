@@ -3,20 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System.Drawing;
 
 [System.Serializable]
 public class InventorySystem
 {
     [SerializeField] private List<InventorySlot> inventorySlots;
+    [SerializeField] private int _gold;
+
+    public int Gold => _gold;
     public List<InventorySlot> InventorySlots => inventorySlots;
     public int InventorySize => InventorySlots.Count;
     public UnityAction<InventorySlot> OnInventorySlotChanged;
 
     public InventorySystem(int size)
     {
+        _gold = 0;
+        CreateInventory(size);
+    }
+
+    public InventorySystem(int size, int gold)
+    {
+        _gold = gold;
+        CreateInventory(size);
+    }
+
+    private void CreateInventory(int size)
+    {
         inventorySlots = new List<InventorySlot>(size);
 
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             inventorySlots.Add(new InventorySlot());
         }
@@ -64,5 +80,34 @@ public class InventorySystem
     {
         freeSlot = InventorySlots.FirstOrDefault(i => i.ItemData == null);
         return freeSlot == null ? false : true;
+    }
+
+    public bool CheckInventoryRemaining(Dictionary<InventoryItemData, int> shoppingCart)
+    {
+        var clonedSystem = new InventorySystem(this.InventorySize);
+
+        for(int i = 0;i < InventorySize; i++)
+        {
+            clonedSystem.InventorySlots[i].AssignItem(this.InventorySlots[i].ItemData,
+                this.InventorySlots[i].StackSize);
+        }
+
+        foreach(var kvp in shoppingCart)
+        {
+            for(int i = 0; i < kvp.Value; i++)
+            {
+                if (!clonedSystem.AddToInventory(kvp.Key, 1))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public void SpendGold(int basketTotal)
+    {
+        _gold -= basketTotal;
     }
 }

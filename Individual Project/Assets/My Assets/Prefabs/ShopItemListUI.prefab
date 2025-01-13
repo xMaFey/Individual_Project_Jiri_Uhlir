@@ -504,6 +504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aec16e021310b348b3c017af2c7b3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemSprite: {fileID: 3332227294125390004}
+  _itemName: {fileID: 6930641824729293872}
+  _itemCount: {fileID: 9028764665706179346}
+  _assignedItemSlot:
+    _itemID: -1
+    stackSize: -1
+  _addItemToCartButton: {fileID: 5902499627204401963}
+  _removeItemFromCartButton: {fileID: 5031216468478825209}
 --- !u!1 &7596862659086004874
 GameObject:
   m_ObjectHideFlags: 0

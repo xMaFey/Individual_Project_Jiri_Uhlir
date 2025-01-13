@@ -2980,7 +2980,6 @@ GameObject:
   m_Component:
   - component: {fileID: 405016051}
   - component: {fileID: 405016053}
-  - component: {fileID: 405016052}
   m_Layer: 5
   m_Name: ShopUIController
   m_TagString: Untagged
@@ -3008,18 +3007,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &405016052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405016050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aec16e021310b348b3c017af2c7b3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &405016053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,7 +3314,7 @@ Transform:
   m_GameObject: {fileID: 464431819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.7999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4536,6 +4523,8 @@ MonoBehaviour:
   inventorySize: 24
   primaryInventorySystem:
     inventorySlots: []
+    _gold: 0
+  _gold: 0
   _prompt: E - Big Chest
 --- !u!65 &719564844
 BoxCollider:
@@ -5112,6 +5101,8 @@ MonoBehaviour:
   inventorySize: 12
   primaryInventorySystem:
     inventorySlots: []
+    _gold: 0
+  _gold: 0
   _prompt: E - Small Chest
 --- !u!114 &854149833
 MonoBehaviour:
@@ -8390,7 +8381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692988a8dc85da24484fa35fb4a8074c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: f73fc16a-8124-439b-ace5-dde788aa7c10
+  _id: 5a4a4b6b-42df-4968-8338-21ab250faffa
 --- !u!4 &1482996876
 Transform:
   m_ObjectHideFlags: 0
@@ -10158,9 +10149,12 @@ MonoBehaviour:
   inventorySize: 9
   primaryInventorySystem:
     inventorySlots: []
+    _gold: 0
+  _gold: 20
   secondaryInventorySize: 18
   secondaryInventorySystem:
     inventorySlots: []
+    _gold: 0
 --- !u!224 &2031122523 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5964649368351013164, guid: 4464fe79eeb3de049afee01a8d568ebc, type: 3}
