@@ -45,6 +45,6 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
     public void EndInteraction()
     {
-        throw new System.NotImplementedException();
+       
     }
 }

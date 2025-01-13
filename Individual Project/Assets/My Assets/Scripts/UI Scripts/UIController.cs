@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIController : MonoBehaviour
 {
@@ -20,6 +21,14 @@ public class UIController : MonoBehaviour
     private void OnDisable()
     {
         ShopKeeper.OnShopWindowRequested -= DisplayShowWindow;
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            _shopKeeperDisplay.gameObject.SetActive(false);
+        }
     }
 
     private void DisplayShowWindow(ShopSystem shopSystem, PlayerInventoryHolder playerInventory)

@@ -16,5 +16,5 @@ MonoBehaviour:
   DisplayName: Ring
   Description: This is a Ring!
   Icon: {fileID: 21300000, guid: cea4a58609fcc6841b901c428ed158ee, type: 3}
-  MaxStackSize: 1
+  MaxStackSize: 3
   GoldValue: 10

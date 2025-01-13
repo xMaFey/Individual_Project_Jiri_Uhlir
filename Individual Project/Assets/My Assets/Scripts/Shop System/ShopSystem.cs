@@ -41,6 +41,7 @@ public class ShopSystem
         if(ContainsItem(data, out ShopSlot shopSlot))
         {
             shopSlot.AddToStack(amount);
+            return;
         }
 
         var freeSlot = GetFreeSlot();
@@ -77,5 +78,14 @@ public class ShopSystem
         _availableGold += basketTotal;
     }
 
+    public void SellItem(InventoryItemData kvpKey, int kvpValue, int price)
+    {
+        AddToShop(kvpKey, kvpValue);
+        ReduceGold(price);
+    }
 
+    private void ReduceGold(int price)
+    {
+        _availableGold -= price;
+    }
 }
