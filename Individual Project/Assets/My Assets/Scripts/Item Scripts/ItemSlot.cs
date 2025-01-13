@@ -32,6 +32,22 @@ public abstract class ItemSlot : ISerializationCallbackReceiver
             AddToStack(invSlot.stackSize);
         }
     }
+
+    public void AssignItem(InventoryItemData data, int amount)
+    {
+        if(itemData == data)
+        {
+            AddToStack(amount);
+        }
+        else
+        {
+            itemData = data;
+            _itemID = data.ID;
+            stackSize = 0;
+            AddToStack(amount);
+        }
+    }
+
     public void AddToStack(int amount)
     {
         stackSize += amount;

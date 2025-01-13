@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopSlot : MonoBehaviour
+[System.Serializable]
+public class ShopSlot : ItemSlot
 {
+    public ShopSlot()
+    {
+        ClearSlot();
+    }
 
 }

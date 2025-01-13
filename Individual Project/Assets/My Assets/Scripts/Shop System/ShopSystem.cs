@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class ShopSystem : MonoBehaviour
+[System.Serializable]
+public class ShopSystem
 {
-    private List<ShopSlot> _shopInventory;
-    private int _availableGold;
-    private float _buyMarkUp;
-    private float _sellMarkUp;
+    [SerializeField] private List<ShopSlot> _shopInventory;
+    [SerializeField] private int _availableGold;
+    [SerializeField] private float _buyMarkUp;
+    [SerializeField] private float _sellMarkUp;
 
     public ShopSystem(int size, int gold, float buyMarkUp, float sellMarkUp)
     {
@@ -20,6 +22,41 @@ public class ShopSystem : MonoBehaviour
 
     private void SetShopSize(int size)
     {
+        _shopInventory = new List<ShopSlot>(size);
 
+        for (int i = 0; i < size; i++)
+        {
+            _shopInventory.Add(new ShopSlot());
+        }
+    }
+
+    public void AddToShop(InventoryItemData data, int amount)
+    {
+        if(ContainsItem(data, out ShopSlot shopSlot))
+        {
+            shopSlot.AddToStack(amount);
+        }
+
+        var freeSlot = GetFreeSlot();
+        freeSlot.AssignItem(data, amount);
+    }
+
+    private ShopSlot GetFreeSlot()
+    {
+        var freeSlot = _shopInventory.FirstOrDefault(i => i.ItemData == null);
+        if (freeSlot == null)
+        {
+            freeSlot = new ShopSlot();
+            _shopInventory.Add(freeSlot);
+        }
+
+        return freeSlot;
+    }
+
+    public bool ContainsItem(InventoryItemData itemToAdd, out ShopSlot shopSlot)
+    {
+        shopSlot = _shopInventory.Find(i => i.ItemData == itemToAdd);
+
+        return shopSlot != null;
     }
 }
