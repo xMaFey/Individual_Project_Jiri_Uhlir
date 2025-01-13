@@ -17,3 +17,4 @@ MonoBehaviour:
   Description: This is a Bread.
   Icon: {fileID: 21300000, guid: 9a82544a4e8ea82448062dac5853f931, type: 3}
   MaxStackSize: 5
+  GoldValue: 2
