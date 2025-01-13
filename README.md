@@ -8,6 +8,7 @@ https://github.com/xMaFey/Individual_Project_Jiri_Uhlir
 
 
 Third Party Assets & Tutorials:
+
 https://assetstore.unity.com/packages/3d/characters/humanoids/lowpoly-survival-character-rio-273074
 https://assetstore.unity.com/packages/vfx/particles/character-selection-effects-free-285268
 https://assetstore.unity.com/packages/2d/environments/free-game-items-131764
